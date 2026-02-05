@@ -1,0 +1,40 @@
+{
+    "interstellar_travel_db": [
+        {
+            "id": "duna_holtzman_foldspace",
+            "type": "Dobra do Espaço",
+            "work": "Duna",
+            "description": "A nave utiliza o efeito Holtzman para dobrar o espaço, permitindo que dois pontos distantes do universo se tornem adjacentes. A viagem é instantânea, mas extremamente perigosa sem a presciência dos Navegadores da Guilda, que usam a especiaria melange para prever rotas seguras."
+        },
+        {
+            "id": "foundation_hyperspace_jump",
+            "type": "Salto pelo Hiperspaço",
+            "work": "Fundação",
+            "description": "Naves entram em uma dimensão alternativa chamada hiperespaço, onde as leis da física diferem do espaço normal. Os saltos permitem viagens rápidas entre sistemas estelares, mas exigem cálculos precisos para evitar emergir dentro de estrelas ou planetas."
+        },
+        {
+            "id": "star_wars_hyperspace",
+            "type": "Hiperespaço",
+            "work": "Star Wars",
+            "description": "As naves entram no hiperespaço, uma dimensão paralela onde a distância é drasticamente reduzida. A nave viaja a velocidades supraluminais guiada por computadores de navegação que evitam colisões com massas gravitacionais."
+        },
+        {
+            "id": "star_trek_warp_drive",
+            "type": "Warp Drive",
+            "work": "Star Trek",
+            "description": "O motor de dobra cria um campo warp que comprime o espaço à frente da nave e expande atrás, permitindo velocidades superiores à da luz sem violar localmente as leis da relatividade. A nave permanece em espaço normal dentro da bolha de dobra."
+        },
+        {
+            "id": "interstellar_wormhole",
+            "type": "Buraco de Minhoca Artificial",
+            "work": "Interestelar",
+            "description": "Um buraco de minhoca colocado próximo a Saturno conecta dois pontos distantes do espaço-tempo. Ele permite travessia quase instantânea entre galáxias, sendo uma construção de entidades futuras com domínio sobre dimensões superiores."
+        },
+        {
+            "id": "interstellar_relativistic_travel",
+            "type": "Viagem Relativística",
+            "work": "Interestelar",
+            "description": "Naves viajam a velocidades próximas à da luz, causando dilatação temporal extrema. Para os tripulantes, a viagem dura pouco tempo, enquanto décadas se passam para observadores externos, criando impactos profundos na relação entre tempo e humanidade."
+        }
+    ]
+}
