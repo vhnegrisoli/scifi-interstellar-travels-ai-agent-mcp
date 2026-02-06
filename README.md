@@ -33,38 +33,79 @@ Este projeto explora diferentes tecnologias de viagem interestelar presentes em 
 
 ## 🏗️ Arquitetura do Projeto
 
+![arch](docs/scifi_mcp_agent_arch.png)
+
+---
+
 ```
 interstellar_travel_mcp_ai_agent/
-├── 🤖 ftl_agent/                 # Agente de IA
+├── 🤖 ftl_agent/                 # API do Agente de IA
+├── 🖥️ ftl_app/                    # Interface Web (Streamlit)
 ├── 🔌 ftl_travel_mcp_server/     # Servidor MCP
-└── 🌐 interstellar_api/          # API REST
+└── 🌐 interstellar_api/          # API REST de Dados
 ```
 
 ---
 
 ## 📦 Módulos e Responsabilidades
 
-### 🤖 **ftl_agent/** - Agente de IA
+### 🤖 **ftl_agent/** - API do Agente de IA
 
-O agente de IA é o componente conversacional do sistema que interage com usuários através de linguagem natural.
+API REST que expõe o agente de IA conversacional através de endpoints HTTP. Processa perguntas sobre viagens interestelares e se comunica com o servidor MCP.
 
 **Responsabilidades:**
+- Expor endpoint HTTP para interação com o agente
 - Processar perguntas dos usuários sobre viagens interestelares
 - Comunicar-se com o servidor MCP para obter informações
 - Gerar respostas contextualizadas e inteligentes
 - Manter o contexto da conversa
 
 **Tecnologias:**
+- `FastAPI` - Framework web para a API
 - `strands-agents[openai]` - Framework para criação de agentes de IA
 - `strands-agents-tools` - Ferramentas auxiliares para agentes
 - `fastmcp` - Cliente MCP para comunicação com o servidor
 - `python-dotenv` - Gerenciamento de variáveis de ambiente
 - `OpenAI` - Modelo de linguagem para processamento
 
+**Arquitetura:**
+- `agent/` - Implementação do agente de IA, LLM e prompts
+- `model/` - Modelos de dados (ChatRequest, ChatResponse)
+- `route/` - Rotas HTTP da API
+- `service/` - Lógica de negócio do agente
+- `app.py` - Aplicação FastAPI principal
+
+**Endpoint Disponível:**
+- `POST /api/interstellar/agent` - Envia mensagens para o agente e recebe respostas
+  - Body: `{"messages": [{"role": "user", "content": "sua pergunta"}]}`
+  - Response: `{"content": "resposta do agente"}`
+
+---
+
+### 🖥️ **ftl_app/** - Interface Web (Streamlit)
+
+Interface web interativa construída com Streamlit que permite aos usuários conversarem com o agente de IA através de um chat amigável.
+
+**Responsabilidades:**
+- Fornecer interface gráfica para interação com o agente
+- Gerenciar histórico de conversas
+- Fazer requisições HTTP para a API do agente
+- Exibir respostas de forma formatada
+
+**Tecnologias:**
+- `Streamlit` - Framework para criação de aplicações web
+- `requests` - Cliente HTTP para comunicação com a API
+- `python-dotenv` - Gerenciamento de variáveis de ambiente
+
+**Funcionalidades:**
+- 💬 Chat interativo com histórico de mensagens
+- 🎨 Interface amigável e responsiva
+- ⚡ Comunicação em tempo real com o agente
+- 🔄 Gerenciamento automático de sessão
+
 **Arquivos:**
-- `agent.py` - Implementação do agente de IA
-- `model.py` - Modelos de dados do agente
-- `.env` - Configurações (API keys, modelo)
+- `streamlit_app.py` - Aplicação Streamlit principal
+- `.env` - Configuração da URL da API do agente
 - `requirements.txt` - Dependências Python
 
 ---
@@ -169,7 +210,7 @@ O banco de dados contém informações sobre 6 tipos de viagens interestelares:
 - Python 3.8+
 - pip
 
-### 1️⃣ Executar a API REST
+### 1️⃣ Executar a API REST de Dados
 
 ```bash
 cd interstellar_api
@@ -195,7 +236,7 @@ python mcp_server.py
 
 O servidor MCP estará disponível em `http://localhost:3000`
 
-### 3️⃣ Executar o Agente de IA
+### 3️⃣ Executar a API do Agente de IA
 
 ```bash
 cd ftl_agent
@@ -205,8 +246,24 @@ pip install -r requirements.txt
 # OPENAI_KEY=sua-chave-aqui
 # OPENAI_MODEL=gpt-4-mini
 
-python agent.py
+uvicorn app:app --reload --port 8001
 ```
+
+A API do agente estará disponível em `http://localhost:8001`
+
+### 4️⃣ Executar a Interface Web
+
+```bash
+cd ftl_app
+pip install -r requirements.txt
+
+# Configure o .env com:
+# AGENT_URL=http://localhost:8001
+
+streamlit run streamlit_app.py
+```
+
+A interface web estará disponível em `http://localhost:8501`
 
 ---
 
@@ -220,6 +277,11 @@ OPENAI_KEY=sua-chave-openai
 OPENAI_MODEL=gpt-4-mini
 ```
 
+**ftl_app/.env**
+```env
+AGENT_URL=http://localhost:8001
+```
+
 **ftl_travel_mcp_server/.env**
 ```env
 INTERSTELLAR_API_BASE_URL=http://localhost:8000/api/interstellar
@@ -231,7 +293,7 @@ PORT=3000
 
 ## 💡 Exemplos de Uso
 
-### Consultar via API REST
+### Consultar via API REST de Dados
 ```bash
 # Listar todas as informações disponíveis
 curl http://localhost:8000/api/interstellar/info
@@ -243,7 +305,15 @@ curl http://localhost:8000/api/interstellar/work/Star%20Wars
 curl http://localhost:8000/api/interstellar/type/Warp%20Drive
 ```
 
-### Interagir com o Agente de IA
+### Consultar via API do Agente
+```bash
+curl -X POST http://localhost:8001/api/interstellar/agent \
+  -H "Content-Type: application/json" \
+  -d '{"messages": [{"role": "user", "content": "Me fale sobre Star Wars"}]}'
+```
+
+### Interagir via Interface Web
+Acesse `http://localhost:8501` e converse com o agente:
 ```
 Usuário: "Me fale sobre as viagens em Star Wars"
 Agente: [Consulta o MCP e retorna informações sobre hiperespaço]
