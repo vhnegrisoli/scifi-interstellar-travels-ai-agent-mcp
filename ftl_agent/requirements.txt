@@ -2,3 +2,5 @@ strands-agents[openai]==1.24.0
 strands-agents-tools==0.2.19
 fastmcp==2.14.5
 python-dotenv==1.1.1
+fastapi==0.116.1
+uvicorn==0.35.0
