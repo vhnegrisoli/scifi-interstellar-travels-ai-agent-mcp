@@ -35,6 +35,60 @@
             "type": "Viagem Relativística",
             "work": "Interestelar",
             "description": "Naves viajam a velocidades próximas à da luz, causando dilatação temporal extrema. Para os tripulantes, a viagem dura pouco tempo, enquanto décadas se passam para observadores externos, criando impactos profundos na relação entre tempo e humanidade."
+        },
+        {
+            "id": "rendezvous_with_rama_inertial_flight",
+            "type": "Voo Inercial de Longa Duração",
+            "work": "Encontro com Rama",
+            "description": "A viagem interestelar ocorre por meio de aceleração inicial seguida de cruzeiro inercial por séculos. O método depende de engenharia extremamente durável e planejamento de longo prazo, refletindo uma abordagem realista e não supraluminal."
+        },
+        {
+            "id": "the_expanse_epstein_drive",
+            "type": "Propulsão Contínua de Alta Eficiência",
+            "work": "The Expanse",
+            "description": "O motor Epstein permite aceleração constante por longos períodos, possibilitando viagens rápidas dentro do sistema solar. Embora não permita viagens interestelares frequentes, torna plausível a colonização humana em larga escala."
+        },
+        {
+            "id": "culture_grid_energy_travel",
+            "type": "Manipulação de Energia do Grid",
+            "work": "A Cultura (Iain M. Banks)",
+            "description": "Naves utilizam acesso quase ilimitado à energia do 'Grid', uma dimensão energética subjacente ao universo. Isso permite velocidades extremas e manobras além da compreensão humana, geralmente controladas por IAs hiperavançadas."
+        },
+        {
+            "id": "hyperion_farcasters",
+            "type": "Portais de Teletransporte (Farcasters)",
+            "work": "Hyperion",
+            "description": "Portais conectam instantaneamente planetas distantes, permitindo trânsito imediato de pessoas e objetos. A civilização torna-se dependente dessa infraestrutura, cuja perda representa um colapso existencial."
+        },
+        {
+            "id": "enders_game_philotic_travel",
+            "type": "Viagem por Espaço Filótico",
+            "work": "O Jogo do Exterminador",
+            "description": "A comunicação e viagem exploram o espaço filótico, uma camada fundamental do universo que conecta todas as partículas. Permite ações instantâneas a grandes distâncias, desfazendo a separação tradicional entre espaço e tempo."
+        },
+        {
+            "id": "three_body_problem_curvature_propulsion",
+            "type": "Propulsão por Curvatura Espacial",
+            "work": "O Problema dos Três Corpos",
+            "description": "Naves alteram a curvatura do espaço ao redor, deixando rastros de velocidade da luz reduzida. Essa tecnologia tem consequências cosmológicas graves, transformando o universo em um ambiente cada vez mais hostil."
+        },
+        {
+            "id": "avatar_interstellar_cryosleep",
+            "type": "Viagem Interestelar com Hibernação",
+            "work": "Avatar",
+            "description": "Viagens entre estrelas são realizadas a velocidades subluminais, com tripulantes em sono criogênico por anos ou décadas. O método prioriza realismo biológico e limita fortemente a expansão humana."
+        },
+        {
+            "id": "warhammer40k_warp",
+            "type": "Navegação pelo Warp",
+            "work": "Warhammer 40.000",
+            "description": "As naves atravessam o Warp, uma dimensão caótica moldada por emoções e entidades psíquicas. A viagem é rápida, porém extremamente perigosa, exigindo campos Geller e navegadores psíquicos para evitar a corrupção."
+        },
+        {
+            "id": "bobiverse_replicative_travel",
+            "type": "Exploração Interestelar Replicante",
+            "work": "Bobiverse",
+            "description": "Sondas interestelares auto-replicantes viajam a velocidades subluz, criando cópias de si mesmas ao alcançar novos sistemas. O método escala exponencialmente a exploração, levantando dilemas éticos e identitários."
         }
     ]
 }

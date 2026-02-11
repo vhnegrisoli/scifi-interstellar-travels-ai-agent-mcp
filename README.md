@@ -191,7 +191,7 @@ Definição dos endpoints da API.
 
 ## 🗃️ Banco de Dados
 
-O banco de dados contém informações sobre 6 tipos de viagens interestelares:
+O banco de dados contém informações sobre tipos de viagens interestelares:
 
 | ID                                 | Tipo                  | Obra         | Descrição                       |
 | ---------------------------------- | --------------------- | ------------ | ------------------------------- |
